@@ -1,0 +1,9 @@
+*.o
+.idea
+.vscode
+code/cmake-build-debug
+code/CMakeFiles
+code/cmake_install.cmake
+code/CMakeCache.txt
+code/Makefile
+code/DA2425_PRJ2_G21
