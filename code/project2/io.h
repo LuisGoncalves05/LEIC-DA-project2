@@ -4,10 +4,10 @@
 #include <string>
 #include <vector>
 
-std::pair<std::vector<int>, std::vector<int>> read_pallets(const std::string& input_file, const int num_pallets);
+std::pair<std::vector<unsigned>, std::vector<unsigned>> read_pallets(const std::string& input_file, const unsigned num_pallets);
 
-std::pair<int, int> read_truck(const std::string& input_file);
+std::pair<unsigned, unsigned> read_truck(const std::string& input_file);
 
-void print_output(std::vector<int>& result_weights, std::vector<int>& result_profits, std::string& output_path);
+void print_output(std::vector<bool>& used_pallets, std::vector<unsigned>& weights, std::vector<unsigned>& profits, std::string& output_path);
 
 #endif
