@@ -29,9 +29,9 @@ int main(const int argc, char** argv) {
     std::string truck_and_pallets_path = path + "TruckAndPallets.csv";
     std::string output_path = path + "Solution.txt";
     
-    auto [weights, profits] = std::move(read_pallets(pallets_path));
-    auto [max_weight, max_pallets] = std::move(read_truck(truck_and_pallets_path));
-    auto [result_weights, result_profits] = std::move(knapsack(weights, profits, max_weight, max_pallets, algorithm));
+    auto [max_weight, num_pallets] = std::move(read_truck(truck_and_pallets_path));
+    auto [weights, profits] = std::move(read_pallets(pallets_path, num_pallets));
+    auto [result_weights, result_profits] = std::move(knapsack(weights, profits, max_weight, algorithm));
 
     print_output(result_weights, result_profits, output_path);
     

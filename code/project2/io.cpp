@@ -4,7 +4,7 @@
 #include <vector>
 
 
-std::pair<std::vector<int>, std::vector<int>> read_pallets(const std::string& input_file) {
+std::pair<std::vector<int>, std::vector<int>> read_pallets(const std::string& input_file, const int num_pallets) {
     std::ifstream inputFile(input_file);
     if (!inputFile.is_open())
         throw std::runtime_error("Error: Could not open input file.");

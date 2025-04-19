@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-std::pair<std::vector<int>, std::vector<int>> read_pallets(const std::string& input_file);
+std::pair<std::vector<int>, std::vector<int>> read_pallets(const std::string& input_file, const int num_pallets);
 
 std::pair<int, int> read_truck(const std::string& input_file);
 
