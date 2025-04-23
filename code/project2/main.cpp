@@ -30,26 +30,18 @@ int main(const int argc, char** argv) {
     std::string truck_and_pallets_path = path + "TruckAndPallets.csv";
     std::string output_path = path + "Solution.txt";
     
-    auto [max_weight, num_pallets] = std::move(read_truck(truck_and_pallets_path));
-    auto [weights, profits] = std::move(read_pallets(pallets_path, num_pallets));
-    auto used_pallets = std::move(knapsack(weights, profits, num_pallets, max_weight, algorithm));
+    unsigned max_weight;
+    unsigned num_pallets;
+
+    std::vector<unsigned> weights(num_pallets);
+    std::vector<unsigned> profits(num_pallets);
+
+    read_truck(truck_and_pallets_path, max_weight, num_pallets);
+    read_pallets(pallets_path, weights, profits);
+    
+    std::vector<bool> used_pallets = std::move(knapsack(weights, profits, num_pallets, max_weight, algorithm));
 
     print_output(used_pallets, weights, profits, output_path);
-    
-    /*
-    std::vector<unsigned> weights = {8,4,4,4,4,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
-    std::vector<unsigned> profits = {8,4,4,4,4,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
-
-    auto used_pallets = std::move(knapsack_dp_recursive_map(weights, profits, 30, 15));
-
-    for (auto item: used_pallets) std::cout << item << ' ';
-    std::cout << std::endl;
-
-    used_pallets = std::move(knapsack_dp_recursive_vector(weights, profits, 30, 15));
-
-    for (auto item: used_pallets) std::cout << item << ' ';
-    std::cout << std::endl;
-    */
 
     return 0;
 }
