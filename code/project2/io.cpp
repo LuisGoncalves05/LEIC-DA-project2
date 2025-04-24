@@ -34,8 +34,11 @@ void read_pallets(const std::string& input_file, std::vector<unsigned> &weights,
     inputFile.close();
 }
 
-void print_output(std::vector<bool>& used_pallets, std::vector<unsigned>& weights, std::vector<unsigned>& profits, std::string& output_path) {
+void write_output(std::vector<bool>& used_pallets, std::vector<unsigned>& weights, std::vector<unsigned>& profits, std::string& output_path) {
+    std::ofstream outputFile(output_path + "Solution.txt");
+    if (!outputFile.is_open()) throw std::runtime_error("Error: Could not create output file.");
 
-    //TODO
+    outputFile << "hello, world!\n";
 
+    outputFile.close();
 }

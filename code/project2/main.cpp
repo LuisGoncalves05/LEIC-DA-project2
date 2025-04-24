@@ -71,5 +71,7 @@ int main(const int argc, char** argv) {
     for (auto element: used_pallets) std::cout << element << ' ';
     std::cout << std::endl;
 
+    write_output(used_pallets, weights, profits, path);
+
     return 0;
 }
