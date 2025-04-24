@@ -33,8 +33,8 @@ int main(const int argc, char** argv) {
     unsigned max_weight;
     unsigned num_pallets;
 
-    std::vector<unsigned> weights(num_pallets + 1);
-    std::vector<unsigned> profits(num_pallets + 1);
+    std::vector<unsigned> weights(num_pallets);
+    std::vector<unsigned> profits(num_pallets);
 
     read_truck(truck_and_pallets_path, max_weight, num_pallets);
     read_pallets(pallets_path, weights, profits);

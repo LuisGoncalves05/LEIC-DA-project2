@@ -21,7 +21,7 @@ void read_pallets(const std::string& input_file, std::vector<unsigned> &weights,
 
     std::string line, pallet, weight, profit;
 
-    for (int i = 1; i < weights.size(); i++) {
+    for (int i = 0; i < weights.size(); i++) {
         std::getline(inputFile, line);
         std::getline(inputFile, pallet, ',');
         std::getline(inputFile, weight, ',');
