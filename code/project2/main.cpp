@@ -53,6 +53,16 @@ int main(const int argc, char** argv) {
 
     start = std::chrono::high_resolution_clock::now();
 
+    used_pallets = std::move(knapsack_dp_iterative(weights, profits, num_pallets, max_weight));
+
+    end = std::chrono::high_resolution_clock::now();
+    duration = end - start;
+    std::cout << "It: " << duration.count() << " seconds.\n";
+    for (auto element: used_pallets) std::cout << element << ' ';
+    std::cout << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+
     used_pallets = std::move(knapsack_dp_recursive_vector(weights, profits, num_pallets, max_weight));
 
     end = std::chrono::high_resolution_clock::now();

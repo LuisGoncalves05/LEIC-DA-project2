@@ -80,8 +80,29 @@ std::vector<bool> knapsack_bf(const std::vector<unsigned>& weights, const std::v
 std::vector<bool> knapsack_dp_iterative(const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned num_pallets, const unsigned max_weight) {
     std::vector<bool> used_pallets(num_pallets, false);
     
-    //TODO
-    
+    std::vector<std::vector<unsigned int>> dp(weights.size() + 1, std::vector<unsigned int>(max_weight + 1, 0));
+    std::vector<std::vector<bool>> used(weights.size() + 1, std::vector<bool>(max_weight + 1, false));
+    for (int i = 1; i <= weights.size(); i++) {
+        for (int j = 1; j <= max_weight; j++) {
+            unsigned int use = j < weights[i - 1]? 0 : dp[i - 1][j - weights[i - 1]] + profits[i - 1];
+            unsigned int dont_use = dp[i - 1][j];
+            dp[i][j] = std::max(use, dont_use);
+
+            used[i][j] = use > dont_use;
+        }
+    }
+
+    for (int i = 0; i < weights.size(); i++) used_pallets[i] = false;
+
+    unsigned int i = weights.size(), j = max_weight;
+    while (i > 0 && j > 0) {
+        if (used[i][j]) {
+            used_pallets[i - 1] = true;
+            j -= weights[i - 1];
+        }
+        i--;
+    }
+        
     return used_pallets;
 }
 
