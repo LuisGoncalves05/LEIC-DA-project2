@@ -35,10 +35,21 @@ void read_pallets(const std::string& input_file, std::vector<unsigned> &weights,
 }
 
 void write_output(std::vector<bool>& used_pallets, std::vector<unsigned>& weights, std::vector<unsigned>& profits, std::string& output_path) {
-    std::ofstream outputFile(output_path + "Solution.txt");
+    std::ofstream outputFile(output_path + "Solution.csv");
     if (!outputFile.is_open()) throw std::runtime_error("Error: Could not create output file.");
 
-    outputFile << "hello, world!\n";
+    outputFile << "Pallet,\tWeight,\tProfit\n";
+
+    unsigned int total_weight = 0, total_profit = 0;
+    for (unsigned i = 0; i < used_pallets.size(); i++) {
+        if (used_pallets[i]) {
+            total_weight += weights[i];
+            total_profit += profits[i];
+            outputFile << i + 1 << ",\t" << weights[i] << ",\t" << profits[i] << '\n';
+        }
+    }
+    outputFile << "\nTotal weight: " << total_weight << "\n";
+    outputFile << "Total profit: " << total_profit << "\n";
 
     outputFile.close();
 }
