@@ -1,14 +1,16 @@
 #include "io.h"
 
-#include <fstream>
-#include <vector>
-
 void read_truck(const std::string& input_file, unsigned &max_weights, unsigned &num_pallets) {
     std::ifstream inputFile(input_file);
     if (!inputFile.is_open()) throw std::runtime_error("Error: Could not open input file.");
 
-    
-    //TODO
+    std::string line, capacity, pallets;
+    std::getline(inputFile, line); // skip first line
+    std::getline(inputFile, capacity, ',');
+    std::getline(inputFile, pallets);
+
+    max_weights = std::stoul(capacity);
+    num_pallets = std::stoul(pallets);
 
     inputFile.close();
 }
