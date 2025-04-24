@@ -1,9 +1,11 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
-#include <map>
-#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 #include <vector>
+#include <map>
 
 /**
  * @brief Prints information about a command-line-interface command
@@ -15,6 +17,6 @@ void show_help_info(const std::vector<std::string>& command, std::map<std::strin
 /**
  * @brief Boots the command-line-interface and handles commands
  */
-void start_cli();
+void interface();
 
 #endif

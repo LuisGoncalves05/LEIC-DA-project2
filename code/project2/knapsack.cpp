@@ -11,7 +11,7 @@
 constexpr unsigned INVALID_RESULT = UINT_MAX;
 
 const std::set<std::string> valid_algorithms = {
-    "bf", "dp_iterative", "dp_recursive_vector", "dp_recursive_map", "greedy", "ilp"
+    "brute-force", "dp_iterative", "dp_recursive_vector", "dp_recursive_map", "greedy", "integer-linear"
 };
 
 
@@ -20,7 +20,7 @@ std::vector<bool> knapsack(const std::vector<unsigned>& weights, const std::vect
         throw std::runtime_error("Unknown algorithm specified: " + algorithm + ".");
     }
 
-    if (algorithm == "bf") {
+    if (algorithm == "brute-force") {
         return knapsack_bf(weights, profits, num_pallets, max_weight);
     } else if (algorithm == "dp_iterative") {
         return knapsack_dp_iterative(weights, profits, num_pallets, max_weight);
@@ -30,7 +30,7 @@ std::vector<bool> knapsack(const std::vector<unsigned>& weights, const std::vect
         return knapsack_dp_recursive_map(weights, profits, num_pallets, max_weight);
     } else if (algorithm == "greedy") {
         return knapsack_greedy(weights, profits, num_pallets, max_weight);
-    } else if (algorithm == "ilp") {
+    } else if (algorithm == "integer-linear") {
         return knapsack_ilp(weights, profits, num_pallets, max_weight);
     } else {
         throw std::runtime_error("Invalid algorithm specified.");
