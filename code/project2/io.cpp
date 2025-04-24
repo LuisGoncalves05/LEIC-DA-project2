@@ -19,8 +19,17 @@ void read_pallets(const std::string& input_file, std::vector<unsigned> &weights,
     std::ifstream inputFile(input_file);
     if (!inputFile.is_open()) throw std::runtime_error("Error: Could not open input file.");
 
-    
-    //TODO
+    std::string line, pallet, weight, profit;
+
+    for (int i = 1; i < weights.size(); i++) {
+        std::getline(inputFile, line);
+        std::getline(inputFile, pallet, ',');
+        std::getline(inputFile, weight, ',');
+        std::getline(inputFile, profit);
+
+        weights[i] = std::stoul(weight);
+        profits[i] = std::stoul(profit);
+    }
 
     inputFile.close();
 }

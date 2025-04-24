@@ -33,13 +33,11 @@ int main(const int argc, char** argv) {
     unsigned max_weight;
     unsigned num_pallets;
 
-    std::vector<unsigned> weights(num_pallets);
-    std::vector<unsigned> profits(num_pallets);
+    std::vector<unsigned> weights(num_pallets + 1);
+    std::vector<unsigned> profits(num_pallets + 1);
 
     read_truck(truck_and_pallets_path, max_weight, num_pallets);
     read_pallets(pallets_path, weights, profits);
-
-    std::cout << "Max weight: " << max_weight << " and number of pallets: " << num_pallets << '\n';
 
     std::vector<bool> used_pallets = std::move(knapsack(weights, profits, num_pallets, max_weight, algorithm));
 
