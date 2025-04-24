@@ -53,3 +53,17 @@ void write_output(std::vector<bool>& used_pallets, std::vector<unsigned>& weight
 
     outputFile.close();
 }
+
+void print_output(std::vector<bool>& used_pallets, std::vector<unsigned>& weights, std::vector<unsigned>& profits) {
+    std::cout << "Used pallets:\n";
+    unsigned int total_weight = 0, total_profit = 0;
+    for (unsigned i = 0; i < used_pallets.size(); i++) {
+        if (used_pallets[i]) {
+            total_weight += weights[i];
+            total_profit += profits[i];
+            std::cout << "1 ";
+        } else std::cout << "0 ";
+    }
+    std::cout << "\nTotal weight: " << total_weight << "\n";
+    std::cout << "Total profit: " << total_profit << "\n";
+}

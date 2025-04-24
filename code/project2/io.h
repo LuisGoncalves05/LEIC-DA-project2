@@ -5,6 +5,7 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
+#include <iostream>
 
 void read_truck(const std::string& input_file, unsigned &max_weights, unsigned &num_pallets);
 void read_pallets(const std::string& input_file, std::vector<unsigned> &weights, std::vector<unsigned> &profits);
