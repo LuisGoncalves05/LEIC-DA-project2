@@ -1,9 +1,10 @@
 #include <stdexcept>
+#include <iostream>
+#include <chrono>
 
 #include "interface.h"
 #include "io.h"
 #include "knapsack.h"
-#include <iostream>
 
 /**
  * @mainpage
@@ -12,7 +13,7 @@
 
 int main(const int argc, char** argv) {
     std::string path, algorithm;
-    
+    /*
     if (argc == 1) {
         start_cli();
         return 0;
@@ -35,21 +36,40 @@ int main(const int argc, char** argv) {
     auto used_pallets = std::move(knapsack(weights, profits, num_pallets, max_weight, algorithm));
 
     print_output(used_pallets, weights, profits, output_path);
-    
-    /*
-    std::vector<unsigned> weights = {8,4,4,4,4,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
-    std::vector<unsigned> profits = {8,4,4,4,4,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
-
-    auto used_pallets = std::move(knapsack_dp_recursive_map(weights, profits, 30, 15));
-
-    for (auto item: used_pallets) std::cout << item << ' ';
-    std::cout << std::endl;
-
-    used_pallets = std::move(knapsack_dp_recursive_vector(weights, profits, 30, 15));
-
-    for (auto item: used_pallets) std::cout << item << ' ';
-    std::cout << std::endl;
     */
+    
+    std::vector<unsigned> weights = {6000, 5000, 400, 300, 50, 300, 20};
+    std::vector<unsigned> profits = {100, 200, 300, 40, 400, 100, 70};
+    
+    auto start = std::chrono::high_resolution_clock::now();
+
+    auto used_pallets = std::move(knapsack_bf(weights, profits, weights.size(), 1000));
+
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end - start;
+    std::cout << "Bf: " << duration.count() << " seconds.\n";
+    for (auto element: used_pallets) std::cout << element << ' ';
+    std::cout << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+
+    used_pallets = std::move(knapsack_dp_recursive_vector(weights, profits, weights.size(), 1000));
+
+    end = std::chrono::high_resolution_clock::now();
+    duration = end - start;
+    std::cout << "Vec: " << duration.count() << " seconds.\n";
+    for (auto element: used_pallets) std::cout << element << ' ';
+    std::cout << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+
+    used_pallets = std::move(knapsack_dp_recursive_map(weights, profits, weights.size(), 1000));
+
+    end = std::chrono::high_resolution_clock::now();
+    duration = end - start;
+    std::cout << "Map: " << duration.count() << " seconds.\n";
+    for (auto element: used_pallets) std::cout << element << ' ';
+    std::cout << std::endl;
 
     return 0;
 }

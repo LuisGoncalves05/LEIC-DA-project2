@@ -4,6 +4,8 @@
 #include <unordered_map>
 
 #include "knapsack.h"
+#include <bitset>
+#include <iostream>
 
 
 constexpr unsigned INVALID_RESULT = UINT_MAX;
@@ -37,9 +39,39 @@ std::vector<bool> knapsack(const std::vector<unsigned>& weights, const std::vect
 
 
 std::vector<bool> knapsack_bf(const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned num_pallets, const unsigned max_weight) {
+    if (num_pallets > 32) {
+        throw std::runtime_error("That is a bit ambitious don't you think?");
+    }
+
     std::vector<bool> used_pallets(num_pallets, false);
     
-    //TODO
+    unsigned combination = 0;
+    unsigned best = 0;
+    unsigned best_combination = INVALID_RESULT;
+    while (combination < (1<<num_pallets)) {
+        std::bitset<32> combinations(combination);
+        unsigned value = 0;
+        unsigned weight = 0;
+        for (unsigned j = 0; j < num_pallets; j++) {
+            weight += weights[j] * combinations[j];
+            value += profits[j] * combinations[j];
+            if (weight > max_weight) 
+                break;
+
+            if (value > best) {
+                best_combination = combination;
+                best = value;
+            }
+        }
+        combination++;
+    }
+
+    const std::bitset<32> b(best_combination);
+    if (best_combination != INVALID_RESULT) {
+        for (int j = 0; j < num_pallets; j++) {
+            used_pallets[j] = b[j];
+        }
+    }
     
     return used_pallets;
 }
@@ -87,12 +119,12 @@ unsigned dp_recursive_vector_helper(const unsigned item, const unsigned weight, 
 
             // Check if called with non-negative weight
             if (weights[item - 1] <= weight) {
-                used = dp_recursive_vector_helper(item - 1, weight - weights[item - 1], profits, weights, last_item_vector, max_value_vector);
+                used = dp_recursive_vector_helper(item - 1, weight - weights[item - 1], weights, profits, last_item_vector, max_value_vector);
                 if (used != INVALID_RESULT)
                     used += profits[item - 1];
             }
 
-            const unsigned not_used = dp_recursive_vector_helper(item - 1, weight, profits, weights, last_item_vector, max_value_vector);
+            const unsigned not_used = dp_recursive_vector_helper(item - 1, weight, weights, profits, last_item_vector, max_value_vector);
 
             if (used != INVALID_RESULT && used > not_used) {
                 last_item_vector[item][weight] = weight - weights[item - 1];
@@ -137,8 +169,8 @@ std::vector<bool> knapsack_dp_recursive_map(const std::vector<unsigned>& weights
     return used_pallets;
 }
 
-inline unsigned to_flat_idx(const unsigned i, const unsigned j, const unsigned max_weight) {
-    return i * (max_weight + 1) + j;
+inline unsigned to_flat_idx(const unsigned combination, const unsigned j, const unsigned max_weight) {
+    return combination * (max_weight + 1) + j;
 }
 
 unsigned dp_recursive_map_helper(const unsigned item, const unsigned weight, const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned max_weight, std::unordered_map<unsigned, unsigned>& last_item_map, std::unordered_map<unsigned, unsigned>& max_value_map) {
@@ -177,7 +209,7 @@ unsigned dp_recursive_map_helper(const unsigned item, const unsigned weight, con
 std::vector<bool> knapsack_greedy(const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned num_pallets, const unsigned max_weight) {
     std::vector<bool> used_pallets(num_pallets, false);
     
-    //TODO
+    
     
     return used_pallets;
 }
