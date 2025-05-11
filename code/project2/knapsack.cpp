@@ -208,9 +208,22 @@ unsigned dp_recursive_map_helper(const unsigned item, const unsigned weight, con
 
 std::vector<bool> knapsack_greedy(const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned num_pallets, const unsigned max_weight) {
     std::vector<bool> used_pallets(num_pallets, false);
-    
-    
-    
+    int current_capacity = max_weight;
+    while (true) {
+        unsigned maxvalue = 0;
+        int choice = -1;
+        for (int item = 0; item < num_pallets; item++) {
+            if(maxvalue < profits[item] && current_capacity >= weights[item] && used_pallets[item] == false) {
+                maxvalue = profits[item];
+                choice = item;
+            }
+        }
+        if (choice == -1) {
+            break;
+        }
+        used_pallets[choice] = true;
+        current_capacity -= weights[choice];
+    }
     return used_pallets;
 }
 
