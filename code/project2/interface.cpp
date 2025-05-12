@@ -19,7 +19,9 @@ void show_help_info(const std::vector<std::string>& command, std::map<std::strin
 }
 
 void problem_sorver(std::vector<std::string>& command) {
+    auto start = std::chrono::high_resolution_clock::now();
     std::string path;
+    std::string algorithm = command[0];
     std::string dataset_number = command[1];
     path = "data/example" + dataset_number + "/";
 
@@ -31,12 +33,12 @@ void problem_sorver(std::vector<std::string>& command) {
     auto [weights, profits] = std::move(read_pallets(pallets_path, num_pallets));
     auto used_pallets = std::move(knapsack(weights, profits, num_pallets, max_weight, algorithm));
 
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = duration_cast<std::chrono::microseconds>(stop - start);
+
     print_output(used_pallets, weights, profits, output_path);
 
 }
-
-
-
 
 std::vector<unsigned> weights;
 std::vector<unsigned> profits;
@@ -46,7 +48,9 @@ std::string algorithm;
 void interface() {
     std::map<std::string, std::string> info = {
         {"brute-force", "Does the problem"},
-        {"dynamic", "Does the problem"},
+        {"dp_iterative", "Does the problem"},
+        {"dp_recursive_vector", "Does the problem"},
+        {"dp_recursive_map", "Does the problem"},
         {"greedy", "Does the problem"},
         {"integer-linear", "Does the problem"},
         {"quit", "Terminates the program."}
@@ -68,18 +72,10 @@ void interface() {
         }
         if (command[0] == "help")
             show_help_info(command, info);
-        else if (command[0] == "brute-force" || command[0] == "integer-linear" || command[0] == "greedy") {
-            show_help_info(command, info);
-        }
-        else if (command[0] == "dynamic") {
-            show_help_info(command, info);
+        else if (command[0] == "brute-force" || command[0] == "integer-linear" || command[0] == "greedy" || command[0] == "dp_recursive_vector" || command[0] == "dp_recursive_map" || command[0] == "dp_iterative") {
+            problem_sorver(command);
         }
         else
             std::cout << "Invalid command.\n";
     }
-}
-
-int main() {
-    interface();
-    return 0;
 }

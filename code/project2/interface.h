@@ -6,6 +6,9 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <chrono>
+#include "io.h"
+#include "knapsack.h"
 
 /**
  * @brief Prints information about a command-line-interface command
