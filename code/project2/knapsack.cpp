@@ -208,22 +208,24 @@ unsigned dp_recursive_map_helper(const unsigned item, const unsigned weight, con
 
 std::vector<bool> knapsack_greedy(const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned num_pallets, const unsigned max_weight) {
     std::vector<bool> used_pallets(num_pallets, false);
-    int current_capacity = max_weight;
-    while (true) {
-        unsigned maxvalue = 0;
-        int choice = -1;
-        for (int item = 0; item < num_pallets; item++) {
-            if(maxvalue < profits[item] && current_capacity >= weights[item] && used_pallets[item] == false) {
-                maxvalue = profits[item];
-                choice = item;
-            }
-        }
-        if (choice == -1) {
-            break;
-        }
-        used_pallets[choice] = true;
-        current_capacity -= weights[choice];
+    int current_weight = max_weight;
+    std::vector<std::pair<float,int>> helper;
+
+    for (unsigned i = 0; i<num_pallets; i++) {
+        helper.push_back({(float) weights[i] / (float) profits[i], i});
     }
+    std::sort(helper.begin(),helper.end(),
+        [](const std::pair<float, int>& a, const std::pair<float, int>& b) {
+        return a.first < b.first;
+    });
+
+    for (unsigned i = 0; i<num_pallets; i++) {
+        if (current_weight-(int)weights[helper[i].second] >= 0) {
+            used_pallets[helper[i].second] = true;
+            current_weight -= weights[helper[i].second];
+        }
+    }
+
     return used_pallets;
 }
 
