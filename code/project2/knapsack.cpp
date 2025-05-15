@@ -8,7 +8,6 @@
 #include <bitset>
 #include <iostream>
 
-using namespace operations_research;
 constexpr unsigned INVALID_RESULT = UINT_MAX;
 
 const std::set<std::string> valid_algorithms = {
@@ -17,9 +16,8 @@ const std::set<std::string> valid_algorithms = {
 
 
 std::vector<bool> knapsack(const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned num_pallets, const unsigned max_weight, const std::string& algorithm) {
-    if (valid_algorithms.find(algorithm) == valid_algorithms.end()) {
+    if (valid_algorithms.find(algorithm) == valid_algorithms.end())
         throw std::runtime_error("Unknown algorithm specified: " + algorithm + ".");
-    }
 
     if (algorithm == "brute-force") {
         return knapsack_bf(weights, profits, num_pallets, max_weight);
@@ -49,7 +47,7 @@ std::vector<bool> knapsack_bf(const std::vector<unsigned>& weights, const std::v
     unsigned combination = 0;
     unsigned best = 0;
     unsigned best_combination = INVALID_RESULT;
-    while (combination < (1<<num_pallets)) {
+    while (combination < (1 << num_pallets)) {
         std::bitset<32> combinations(combination);
         unsigned value = 0;
         unsigned weight = 0;
@@ -81,21 +79,22 @@ std::vector<bool> knapsack_bf(const std::vector<unsigned>& weights, const std::v
 std::vector<bool> knapsack_dp_iterative(const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned num_pallets, const unsigned max_weight) {
     std::vector<bool> used_pallets(num_pallets, false);
     
-    std::vector<std::vector<unsigned int>> dp(weights.size() + 1, std::vector<unsigned int>(max_weight + 1, 0));
+    std::vector<std::vector<unsigned>> dp(weights.size() + 1, std::vector<unsigned>(max_weight + 1, 0));
     std::vector<std::vector<bool>> used(weights.size() + 1, std::vector<bool>(max_weight + 1, false));
+
     for (int i = 1; i <= weights.size(); i++) {
         for (int j = 1; j <= max_weight; j++) {
-            unsigned int use = j < weights[i - 1]? 0 : dp[i - 1][j - weights[i - 1]] + profits[i - 1];
-            unsigned int dont_use = dp[i - 1][j];
+            unsigned use = j < weights[i - 1]? 0 : dp[i - 1][j - weights[i - 1]] + profits[i - 1];
+            unsigned dont_use = dp[i - 1][j];
             dp[i][j] = std::max(use, dont_use);
-
             used[i][j] = use > dont_use;
         }
     }
 
-    for (int i = 0; i < weights.size(); i++) used_pallets[i] = false;
+    for (int i = 0; i < weights.size(); i++)
+        used_pallets[i] = false;
 
-    unsigned int i = weights.size(), j = max_weight;
+    int i = weights.size(), j = max_weight;
     while (i > 0 && j > 0) {
         if (used[i][j]) {
             used_pallets[i - 1] = true;
@@ -230,12 +229,13 @@ unsigned dp_recursive_map_helper(const unsigned item, const unsigned weight, con
 
 std::vector<bool> knapsack_greedy(const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned num_pallets, const unsigned max_weight) {
     std::vector<bool> used_pallets(num_pallets, false);
+
     unsigned current_weight = max_weight;
     std::vector<std::pair<float,unsigned>> value_per_weight;
 
-    for (unsigned i = 0; i < num_pallets; i++) {
+    for (unsigned i = 0; i < num_pallets; i++)
         value_per_weight.push_back({profits[i] / (float) weights[i], i});
-    }
+
     std::sort(value_per_weight.rbegin(),value_per_weight.rend());
 
     for (unsigned i = 0; i < num_pallets; i++) {
@@ -253,31 +253,26 @@ std::vector<bool> knapsack_greedy(const std::vector<unsigned>& weights, const st
 std::vector<bool> knapsack_ilp(const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned num_pallets, const unsigned max_weight) {
     std::vector<bool> used_pallets(num_pallets, false);
     
-    MPSolver* solver(MPSolver::CreateSolver("CBC"));
+    operations_research::MPSolver* solver(operations_research::MPSolver::CreateSolver("CBC"));
     
-    std::vector<MPVariable *> variables(num_pallets);
+    std::vector<operations_research::MPVariable *> variables(num_pallets);
     for (int i = 0; i < num_pallets; i++) 
-    variables[i] = solver->MakeBoolVar("x" + std::to_string(i));
+        variables[i] = solver->MakeBoolVar("x" + std::to_string(i));
     
-    MPConstraint* weight_constraint = solver->MakeRowConstraint(0.0, max_weight);
-    for (int i = 0; i < num_pallets; i++) {
-        weight_constraint->SetCoefficient(variables[i], weights[i]);
-    }
-    
-    MPObjective* const objective = solver->MutableObjective();
+    operations_research::MPConstraint* weight_constraint = solver->MakeRowConstraint(0.0, max_weight);
     for (int i = 0; i < num_pallets; i++)
-    objective->SetCoefficient(variables[i], profits[i]);
+        weight_constraint->SetCoefficient(variables[i], weights[i]);
+    
+    operations_research::MPObjective* objective = solver->MutableObjective();
+    for (int i = 0; i < num_pallets; i++)
+        objective->SetCoefficient(variables[i], profits[i]);
     
     objective->SetMaximization();
+    operations_research::MPSolver::ResultStatus result_status = solver->Solve();
     
-    MPSolver::ResultStatus result_status = solver->Solve();
-    
-    if (result_status == MPSolver::OPTIMAL || result_status == MPSolver::FEASIBLE) {
+    if (result_status == operations_research::MPSolver::OPTIMAL || result_status == operations_research::MPSolver::FEASIBLE)
         for (int i = 0; i < num_pallets; i++)
-        used_pallets[i] = variables[i]->solution_value();
-    } else
-        std::cout << "No optimal solution found." << std::endl;
-    
+            used_pallets[i] = variables[i]->solution_value();
 
     return used_pallets;
 }

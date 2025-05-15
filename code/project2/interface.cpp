@@ -43,7 +43,6 @@ void problem_solver(const std::vector<std::string>& command) {
 
     std::vector<unsigned> weights(num_pallets);
     std::vector<unsigned> profits(num_pallets);
-    std::cout << "Reading " << num_pallets << " pallets...\n";
     read_pallets(pallets_path, weights, profits);
 
     auto start = std::chrono::high_resolution_clock::now();

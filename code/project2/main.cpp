@@ -101,7 +101,5 @@ int main(const int argc, char** argv) {
     for (auto element: used_pallets) std::cout << element << ' ';
     std::cout << std::endl;
 
-    print_output(used_pallets, weights, profits);
-
     return 0;
 }
