@@ -17,7 +17,7 @@ int main(const int argc, char** argv) {
     if (argc == 2) { // ./program <algorithm> will use the datasets in IO and output to IO/Solution.txt
         algorithm = argv[1];
         if (algorithm == "cli") {
-            start_cli();
+            interface();
             return 0;
         }
     } else if (argc == 3) { // ./program <dataset_no> <algorithm> will use the datasets in data/example_no and output to data/example_no/Solution.txt
@@ -88,6 +88,16 @@ int main(const int argc, char** argv) {
     end = std::chrono::high_resolution_clock::now();
     duration = end - start;
     std::cout << "Ilp: " << duration.count() << " seconds.\n";
+    for (auto element: used_pallets) std::cout << element << ' ';
+    std::cout << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
+
+    used_pallets = std::move(knapsack_greedy(weights, profits, num_pallets, max_weight));
+
+    end = std::chrono::high_resolution_clock::now();
+    duration = end - start;
+    std::cout << "greedy: " << duration.count() << " seconds.\n";
     for (auto element: used_pallets) std::cout << element << ' ';
     std::cout << std::endl;
 
