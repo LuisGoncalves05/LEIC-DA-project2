@@ -261,7 +261,7 @@ std::vector<bool> knapsack_ilp(const std::vector<unsigned>& weights, const std::
     
     if (result_status == MPSolver::OPTIMAL || result_status == MPSolver::FEASIBLE) {
         for (int i = 0; i < num_pallets; i++)
-        used_pallets[i] = variables[i]->solution_value() > 0.5;  // 0 or 1 values but due to floating point errors we use this
+        used_pallets[i] = variables[i]->solution_value();
     } else
         std::cout << "No optimal solution found." << std::endl;
     
