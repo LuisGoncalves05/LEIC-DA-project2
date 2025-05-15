@@ -2,12 +2,13 @@
 #include <set>
 #include <climits>
 #include <unordered_map>
-
+#include <memory>
+#include "ortools/linear_solver/linear_solver.h"
 #include "knapsack.h"
 #include <bitset>
 #include <iostream>
 
-
+using namespace operations_research;
 constexpr unsigned INVALID_RESULT = UINT_MAX;
 
 const std::set<std::string> valid_algorithms = {
@@ -231,7 +232,7 @@ std::vector<bool> knapsack_greedy(const std::vector<unsigned>& weights, const st
     std::vector<bool> used_pallets(num_pallets, false);
     
     
-    
+
     return used_pallets;
 }
 
@@ -239,7 +240,31 @@ std::vector<bool> knapsack_greedy(const std::vector<unsigned>& weights, const st
 std::vector<bool> knapsack_ilp(const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned num_pallets, const unsigned max_weight) {
     std::vector<bool> used_pallets(num_pallets, false);
     
-    //TODO
+    MPSolver* solver(MPSolver::CreateSolver("CBC"));
     
+    std::vector<MPVariable *> variables(num_pallets);
+    for (int i = 0; i < num_pallets; i++) 
+    variables[i] = solver->MakeBoolVar("x" + std::to_string(i));
+    
+    MPConstraint* weight_constraint = solver->MakeRowConstraint(0.0, max_weight);
+    for (int i = 0; i < num_pallets; i++) {
+        weight_constraint->SetCoefficient(variables[i], weights[i]);
+    }
+    
+    MPObjective* const objective = solver->MutableObjective();
+    for (int i = 0; i < num_pallets; i++)
+    objective->SetCoefficient(variables[i], profits[i]);
+    
+    objective->SetMaximization();
+    
+    MPSolver::ResultStatus result_status = solver->Solve();
+    
+    if (result_status == MPSolver::OPTIMAL || result_status == MPSolver::FEASIBLE) {
+        for (int i = 0; i < num_pallets; i++)
+        used_pallets[i] = variables[i]->solution_value() > 0.5;  // 0 or 1 values but due to floating point errors we use this
+    } else
+        std::cout << "No optimal solution found." << std::endl;
+    
+
     return used_pallets;
 }

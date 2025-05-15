@@ -81,6 +81,16 @@ int main(const int argc, char** argv) {
     for (auto element: used_pallets) std::cout << element << ' ';
     std::cout << std::endl;
 
+    start = std::chrono::high_resolution_clock::now();
+
+    used_pallets = std::move(knapsack_ilp(weights, profits, num_pallets, max_weight));
+
+    end = std::chrono::high_resolution_clock::now();
+    duration = end - start;
+    std::cout << "Ilp: " << duration.count() << " seconds.\n";
+    for (auto element: used_pallets) std::cout << element << ' ';
+    std::cout << std::endl;
+
     print_output(used_pallets, weights, profits);
 
     return 0;

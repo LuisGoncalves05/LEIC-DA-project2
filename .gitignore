@@ -1,6 +1,7 @@
 *.o
 .idea
 .vscode
+code/build
 code/cmake-build-debug
 code/CMakeFiles
 code/cmake_install.cmake
