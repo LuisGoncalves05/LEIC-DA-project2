@@ -1,0 +1,72 @@
+\doxysection{code/project2/interface.cpp File Reference}
+\hypertarget{interface_8cpp}{}\label{interface_8cpp}\index{code/project2/interface.cpp@{code/project2/interface.cpp}}
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}io.\+h"{}}\newline
+{\ttfamily \#include "{}interface.\+h"{}}\newline
+{\ttfamily \#include "{}knapsack.\+h"{}}\newline
+Include dependency graph for interface.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_8cpp_ab2c9ddecd4f405c5d1f4cd1fad70ec62}{show\+\_\+help\+\_\+info}} (const std\+::vector$<$ std\+::string $>$ \&command, const std\+::map$<$ std\+::string, std\+::string $>$ \&info)
+\begin{DoxyCompactList}\small\item\em Prints information about a command-\/line-\/interface command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8cpp_ab2d07c3bddbc38cee11dbd6d820b339d}{problem\+\_\+solver}} (const std\+::vector$<$ std\+::string $>$ \&command)
+\begin{DoxyCompactList}\small\item\em Handles a knapsack problem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8cpp_ade64b529d481df36d56216e570ab4d08}{interface}} ()
+\begin{DoxyCompactList}\small\item\em Boots the command-\/line-\/interface and handles commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{interface_8cpp_ade64b529d481df36d56216e570ab4d08}\label{interface_8cpp_ade64b529d481df36d56216e570ab4d08} 
+\index{interface.cpp@{interface.cpp}!interface@{interface}}
+\index{interface@{interface}!interface.cpp@{interface.cpp}}
+\doxysubsubsection{\texorpdfstring{interface()}{interface()}}
+{\footnotesize\ttfamily void interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Boots the command-\/line-\/interface and handles commands. 
+
+\Hypertarget{interface_8cpp_ab2d07c3bddbc38cee11dbd6d820b339d}\label{interface_8cpp_ab2d07c3bddbc38cee11dbd6d820b339d} 
+\index{interface.cpp@{interface.cpp}!problem\_solver@{problem\_solver}}
+\index{problem\_solver@{problem\_solver}!interface.cpp@{interface.cpp}}
+\doxysubsubsection{\texorpdfstring{problem\_solver()}{problem\_solver()}}
+{\footnotesize\ttfamily void problem\+\_\+solver (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{command }\end{DoxyParamCaption})}
+
+
+
+Handles a knapsack problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & command-\/line-\/interface input \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interface_8cpp_ab2c9ddecd4f405c5d1f4cd1fad70ec62}\label{interface_8cpp_ab2c9ddecd4f405c5d1f4cd1fad70ec62} 
+\index{interface.cpp@{interface.cpp}!show\_help\_info@{show\_help\_info}}
+\index{show\_help\_info@{show\_help\_info}!interface.cpp@{interface.cpp}}
+\doxysubsubsection{\texorpdfstring{show\_help\_info()}{show\_help\_info()}}
+{\footnotesize\ttfamily void show\+\_\+help\+\_\+info (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{command,  }\item[{const std\+::map$<$ std\+::string, std\+::string $>$ \&}]{info }\end{DoxyParamCaption})}
+
+
+
+Prints information about a command-\/line-\/interface command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & command-\/line-\/interface input \\
+\hline
+{\em info} & all commands\textquotesingle{} information \\
+\hline
+\end{DoxyParams}

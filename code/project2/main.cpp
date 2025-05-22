@@ -11,6 +11,14 @@
  * This is the documentation for the Delivery Truck Pallet Packing Optimization project.
  */
 
+/**
+ * @brief Main function for the Delivery Truck Pallet Packing Optimization project.
+ *
+ * This function handles the command executed:
+ * - transfering control to the command line interface;
+ * - calling the wanted knapsack algorithm;
+ * - reading the wanted dataset and solving the problem with all algorithms. 
+ */
 int main(const int argc, char** argv) {  
     if (argc == 1) {
         interface();

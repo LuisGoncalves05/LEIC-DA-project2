@@ -1,0 +1,296 @@
+\doxysection{code/project2/knapsack.h File Reference}
+\hypertarget{knapsack_8h}{}\label{knapsack_8h}\index{code/project2/knapsack.h@{code/project2/knapsack.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for knapsack.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{knapsack_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{knapsack_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{knapsack_8h_aa48c79dc04a894aef851df619b5aeb95}{knapsack}} (const std\+::vector$<$ unsigned $>$ \&weights, const std\+::vector$<$ unsigned $>$ \&profits, const unsigned num\+\_\+pallets, const unsigned max\+\_\+weight, const std\+::string \&algorithm)
+\begin{DoxyCompactList}\small\item\em Calls a chosen algorithm to solve the knapsack problem and prints output. \end{DoxyCompactList}\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{knapsack_8h_aee9d551ad5da539afd10dc5da9bce580}{knapsack\+\_\+bf}} (const std\+::vector$<$ unsigned $>$ \&weights, const std\+::vector$<$ unsigned $>$ \&profits, const unsigned num\+\_\+pallets, const unsigned max\+\_\+weight)
+\begin{DoxyCompactList}\small\item\em Brute-\/force algorithm to solve the knapsack problem. \end{DoxyCompactList}\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{knapsack_8h_afdf64799a14ddc3acea26b02afc7eb64}{knapsack\+\_\+dp\+\_\+iterative}} (const std\+::vector$<$ unsigned $>$ \&weights, const std\+::vector$<$ unsigned $>$ \&profits, const unsigned num\+\_\+pallets, const unsigned max\+\_\+weight)
+\begin{DoxyCompactList}\small\item\em Dynamic programming algorithm to solve the knapsack problem filling the recursion table iteratively. \end{DoxyCompactList}\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{knapsack_8h_a301e0e01e0c5e3e23cfc48f124de937f}{knapsack\+\_\+dp\+\_\+recursive\+\_\+vector}} (const std\+::vector$<$ unsigned $>$ \&weights, const std\+::vector$<$ unsigned $>$ \&profits, const unsigned num\+\_\+pallets, const unsigned max\+\_\+weight)
+\begin{DoxyCompactList}\small\item\em Dynamic programming algorithm to solve the knapsack problem filling the recursion table recursively. \end{DoxyCompactList}\item 
+\texorpdfstring{$\ast$}{*}unsigned \mbox{\hyperlink{knapsack_8h_a9ee6c2150dbcf855b5eb561030741ef0}{dp\+\_\+recursive\+\_\+vector\+\_\+helper}} (const unsigned item, const unsigned weight, const std\+::vector$<$ unsigned $>$ \&weights, const std\+::vector$<$ unsigned $>$ \&profits, std\+::vector$<$ std\+::vector$<$ unsigned $>$ $>$ \&last\+\_\+item\+\_\+vector, std\+::vector$<$ std\+::vector$<$ unsigned $>$ $>$ \&max\+\_\+value\+\_\+vector)
+\begin{DoxyCompactList}\small\item\em Helper function for the recursive dynamic programming algorithm. \end{DoxyCompactList}\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{knapsack_8h_ad4637bd3ec6027bc5c78ef2ebcd2598d}{knapsack\+\_\+dp\+\_\+recursive\+\_\+map}} (const std\+::vector$<$ unsigned $>$ \&weights, const std\+::vector$<$ unsigned $>$ \&profits, const unsigned num\+\_\+pallets, const unsigned max\+\_\+weight)
+\begin{DoxyCompactList}\small\item\em Dynamic programming algorithm to solve the knapsack problem using a map to store the recursion table. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{knapsack_8h_aad578277e90d3f7b19c23930eeff7f6a}{to\+\_\+flat\+\_\+idx}} (const unsigned i, const unsigned j, const unsigned max\+\_\+weight)
+\begin{DoxyCompactList}\small\item\em Helper function for the recursive dynamic programming algorithm using a map that calculates the index for a recursion table position. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{knapsack_8h_aa85454b746f17a9f6035bb8fd12231df}{dp\+\_\+recursive\+\_\+map\+\_\+helper}} (const unsigned item, const unsigned weight, const std\+::vector$<$ unsigned $>$ \&weights, const std\+::vector$<$ unsigned $>$ \&profits, const unsigned max\+\_\+weight, std\+::unordered\+\_\+map$<$ unsigned, unsigned $>$ \&last\+\_\+item\+\_\+map, std\+::unordered\+\_\+map$<$ unsigned, unsigned $>$ \&max\+\_\+value\+\_\+map)
+\begin{DoxyCompactList}\small\item\em Helper function for the recursive dynamic programming algorithm using a map. \end{DoxyCompactList}\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{knapsack_8h_a151baf5987f2f3d75fd80362074aa1a5}{knapsack\+\_\+greedy}} (const std\+::vector$<$ unsigned $>$ \&weights, const std\+::vector$<$ unsigned $>$ \&profits, const unsigned num\+\_\+pallets, const unsigned max\+\_\+weight)
+\begin{DoxyCompactList}\small\item\em Greedy algorithm to solve the knapsack problem. \end{DoxyCompactList}\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{knapsack_8h_ac60bcd8125b3654d30ad6e46b71dfe46}{knapsack\+\_\+ilp}} (const std\+::vector$<$ unsigned $>$ \&weights, const std\+::vector$<$ unsigned $>$ \&profits, const unsigned num\+\_\+pallets, const unsigned max\+\_\+weight)
+\begin{DoxyCompactList}\small\item\em Integer linear programming algorithm to solve the knapsack problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{knapsack_8h_aa85454b746f17a9f6035bb8fd12231df}\label{knapsack_8h_aa85454b746f17a9f6035bb8fd12231df} 
+\index{knapsack.h@{knapsack.h}!dp\_recursive\_map\_helper@{dp\_recursive\_map\_helper}}
+\index{dp\_recursive\_map\_helper@{dp\_recursive\_map\_helper}!knapsack.h@{knapsack.h}}
+\doxysubsubsection{\texorpdfstring{dp\_recursive\_map\_helper()}{dp\_recursive\_map\_helper()}}
+{\footnotesize\ttfamily unsigned dp\+\_\+recursive\+\_\+map\+\_\+helper (\begin{DoxyParamCaption}\item[{const unsigned}]{item,  }\item[{const unsigned}]{weight,  }\item[{const std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{const std\+::vector$<$ unsigned $>$ \&}]{profits,  }\item[{const unsigned}]{max\+\_\+weight,  }\item[{std\+::unordered\+\_\+map$<$ unsigned, unsigned $>$ \&}]{last\+\_\+item\+\_\+map,  }\item[{std\+::unordered\+\_\+map$<$ unsigned, unsigned $>$ \&}]{max\+\_\+value\+\_\+map }\end{DoxyParamCaption})}
+
+
+
+Helper function for the recursive dynamic programming algorithm using a map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & current item (table row) \\
+\hline
+{\em weight} & current weight (table column) \\
+\hline
+{\em weights} & weights of the pallets \\
+\hline
+{\em profits} & profits of the pallets \\
+\hline
+{\em max\+\_\+weight} & maximum weight of the truck \\
+\hline
+{\em last\+\_\+item\+\_\+map} & recursion table for the last item used in a map \\
+\hline
+{\em max\+\_\+value\+\_\+map} & recursion table for the maximum value in a map \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+maximum value for the current item and weight 
+\end{DoxyReturn}
+\Hypertarget{knapsack_8h_a9ee6c2150dbcf855b5eb561030741ef0}\label{knapsack_8h_a9ee6c2150dbcf855b5eb561030741ef0} 
+\index{knapsack.h@{knapsack.h}!dp\_recursive\_vector\_helper@{dp\_recursive\_vector\_helper}}
+\index{dp\_recursive\_vector\_helper@{dp\_recursive\_vector\_helper}!knapsack.h@{knapsack.h}}
+\doxysubsubsection{\texorpdfstring{dp\_recursive\_vector\_helper()}{dp\_recursive\_vector\_helper()}}
+{\footnotesize\ttfamily \texorpdfstring{$\ast$}{*}unsigned dp\+\_\+recursive\+\_\+vector\+\_\+helper (\begin{DoxyParamCaption}\item[{const unsigned}]{item,  }\item[{const unsigned}]{weight,  }\item[{const std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{const std\+::vector$<$ unsigned $>$ \&}]{profits,  }\item[{std\+::vector$<$ std\+::vector$<$ unsigned $>$ $>$ \&}]{last\+\_\+item\+\_\+vector,  }\item[{std\+::vector$<$ std\+::vector$<$ unsigned $>$ $>$ \&}]{max\+\_\+value\+\_\+vector }\end{DoxyParamCaption})}
+
+
+
+Helper function for the recursive dynamic programming algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & current item (table row) \\
+\hline
+{\em weight} & current weight (table column) \\
+\hline
+{\em weights} & weights of the pallets \\
+\hline
+{\em profits} & profits of the pallets \\
+\hline
+{\em last\+\_\+item\+\_\+vector} & recursion table for the last item used \\
+\hline
+{\em max\+\_\+value\+\_\+vector} & recursion table for the maximum value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+maximum value for the current item and weight 
+\end{DoxyReturn}
+\Hypertarget{knapsack_8h_aa48c79dc04a894aef851df619b5aeb95}\label{knapsack_8h_aa48c79dc04a894aef851df619b5aeb95} 
+\index{knapsack.h@{knapsack.h}!knapsack@{knapsack}}
+\index{knapsack@{knapsack}!knapsack.h@{knapsack.h}}
+\doxysubsubsection{\texorpdfstring{knapsack()}{knapsack()}}
+{\footnotesize\ttfamily std\+::vector$<$ bool $>$ knapsack (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{const std\+::vector$<$ unsigned $>$ \&}]{profits,  }\item[{const unsigned}]{num\+\_\+pallets,  }\item[{const unsigned}]{max\+\_\+weight,  }\item[{const std\+::string \&}]{algorithm }\end{DoxyParamCaption})}
+
+
+
+Calls a chosen algorithm to solve the knapsack problem and prints output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weights} & weights of the pallets \\
+\hline
+{\em profits} & profits of the pallets \\
+\hline
+{\em num\+\_\+pallets} & number of pallets \\
+\hline
+{\em max\+\_\+weight} & maximum weight of the truck \\
+\hline
+{\em algorithm} & algorithm chosen to solve the problem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+which pallets are part of the solution 
+\end{DoxyReturn}
+\Hypertarget{knapsack_8h_aee9d551ad5da539afd10dc5da9bce580}\label{knapsack_8h_aee9d551ad5da539afd10dc5da9bce580} 
+\index{knapsack.h@{knapsack.h}!knapsack\_bf@{knapsack\_bf}}
+\index{knapsack\_bf@{knapsack\_bf}!knapsack.h@{knapsack.h}}
+\doxysubsubsection{\texorpdfstring{knapsack\_bf()}{knapsack\_bf()}}
+{\footnotesize\ttfamily std\+::vector$<$ bool $>$ knapsack\+\_\+bf (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{const std\+::vector$<$ unsigned $>$ \&}]{profits,  }\item[{const unsigned}]{num\+\_\+pallets,  }\item[{const unsigned}]{max\+\_\+weight }\end{DoxyParamCaption})}
+
+
+
+Brute-\/force algorithm to solve the knapsack problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weights} & weights of the pallets \\
+\hline
+{\em profits} & profits of the pallets \\
+\hline
+{\em num\+\_\+pallets} & number of pallets \\
+\hline
+{\em max\+\_\+weight} & maximum weight of the truck \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+which pallets are part of the solution 
+\end{DoxyReturn}
+\Hypertarget{knapsack_8h_afdf64799a14ddc3acea26b02afc7eb64}\label{knapsack_8h_afdf64799a14ddc3acea26b02afc7eb64} 
+\index{knapsack.h@{knapsack.h}!knapsack\_dp\_iterative@{knapsack\_dp\_iterative}}
+\index{knapsack\_dp\_iterative@{knapsack\_dp\_iterative}!knapsack.h@{knapsack.h}}
+\doxysubsubsection{\texorpdfstring{knapsack\_dp\_iterative()}{knapsack\_dp\_iterative()}}
+{\footnotesize\ttfamily std\+::vector$<$ bool $>$ knapsack\+\_\+dp\+\_\+iterative (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{const std\+::vector$<$ unsigned $>$ \&}]{profits,  }\item[{const unsigned}]{num\+\_\+pallets,  }\item[{const unsigned}]{max\+\_\+weight }\end{DoxyParamCaption})}
+
+
+
+Dynamic programming algorithm to solve the knapsack problem filling the recursion table iteratively. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weights} & weights of the pallets \\
+\hline
+{\em profits} & profits of the pallets \\
+\hline
+{\em num\+\_\+pallets} & number of pallets \\
+\hline
+{\em max\+\_\+weight} & maximum weight of the truck \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+which pallets are part of the solution 
+\end{DoxyReturn}
+\Hypertarget{knapsack_8h_ad4637bd3ec6027bc5c78ef2ebcd2598d}\label{knapsack_8h_ad4637bd3ec6027bc5c78ef2ebcd2598d} 
+\index{knapsack.h@{knapsack.h}!knapsack\_dp\_recursive\_map@{knapsack\_dp\_recursive\_map}}
+\index{knapsack\_dp\_recursive\_map@{knapsack\_dp\_recursive\_map}!knapsack.h@{knapsack.h}}
+\doxysubsubsection{\texorpdfstring{knapsack\_dp\_recursive\_map()}{knapsack\_dp\_recursive\_map()}}
+{\footnotesize\ttfamily std\+::vector$<$ bool $>$ knapsack\+\_\+dp\+\_\+recursive\+\_\+map (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{const std\+::vector$<$ unsigned $>$ \&}]{profits,  }\item[{const unsigned}]{num\+\_\+pallets,  }\item[{const unsigned}]{max\+\_\+weight }\end{DoxyParamCaption})}
+
+
+
+Dynamic programming algorithm to solve the knapsack problem using a map to store the recursion table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weights} & weights of the pallets \\
+\hline
+{\em profits} & profits of the pallets \\
+\hline
+{\em num\+\_\+pallets} & number of pallets \\
+\hline
+{\em max\+\_\+weight} & maximum weight of the truck \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+which pallets are part of the solution 
+\end{DoxyReturn}
+\Hypertarget{knapsack_8h_a301e0e01e0c5e3e23cfc48f124de937f}\label{knapsack_8h_a301e0e01e0c5e3e23cfc48f124de937f} 
+\index{knapsack.h@{knapsack.h}!knapsack\_dp\_recursive\_vector@{knapsack\_dp\_recursive\_vector}}
+\index{knapsack\_dp\_recursive\_vector@{knapsack\_dp\_recursive\_vector}!knapsack.h@{knapsack.h}}
+\doxysubsubsection{\texorpdfstring{knapsack\_dp\_recursive\_vector()}{knapsack\_dp\_recursive\_vector()}}
+{\footnotesize\ttfamily std\+::vector$<$ bool $>$ knapsack\+\_\+dp\+\_\+recursive\+\_\+vector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{const std\+::vector$<$ unsigned $>$ \&}]{profits,  }\item[{const unsigned}]{num\+\_\+pallets,  }\item[{const unsigned}]{max\+\_\+weight }\end{DoxyParamCaption})}
+
+
+
+Dynamic programming algorithm to solve the knapsack problem filling the recursion table recursively. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weights} & weights of the pallets \\
+\hline
+{\em profits} & profits of the pallets \\
+\hline
+{\em num\+\_\+pallets} & number of pallets \\
+\hline
+{\em max\+\_\+weight} & maximum weight of the truck \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+which pallets are part of the solution 
+\end{DoxyReturn}
+\Hypertarget{knapsack_8h_a151baf5987f2f3d75fd80362074aa1a5}\label{knapsack_8h_a151baf5987f2f3d75fd80362074aa1a5} 
+\index{knapsack.h@{knapsack.h}!knapsack\_greedy@{knapsack\_greedy}}
+\index{knapsack\_greedy@{knapsack\_greedy}!knapsack.h@{knapsack.h}}
+\doxysubsubsection{\texorpdfstring{knapsack\_greedy()}{knapsack\_greedy()}}
+{\footnotesize\ttfamily std\+::vector$<$ bool $>$ knapsack\+\_\+greedy (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{const std\+::vector$<$ unsigned $>$ \&}]{profits,  }\item[{const unsigned}]{num\+\_\+pallets,  }\item[{const unsigned}]{max\+\_\+weight }\end{DoxyParamCaption})}
+
+
+
+Greedy algorithm to solve the knapsack problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weights} & weights of the pallets \\
+\hline
+{\em profits} & profits of the pallets \\
+\hline
+{\em num\+\_\+pallets} & number of pallets \\
+\hline
+{\em max\+\_\+weight} & maximum weight of the truck \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+which pallets are part of the solution 
+\end{DoxyReturn}
+\Hypertarget{knapsack_8h_ac60bcd8125b3654d30ad6e46b71dfe46}\label{knapsack_8h_ac60bcd8125b3654d30ad6e46b71dfe46} 
+\index{knapsack.h@{knapsack.h}!knapsack\_ilp@{knapsack\_ilp}}
+\index{knapsack\_ilp@{knapsack\_ilp}!knapsack.h@{knapsack.h}}
+\doxysubsubsection{\texorpdfstring{knapsack\_ilp()}{knapsack\_ilp()}}
+{\footnotesize\ttfamily std\+::vector$<$ bool $>$ knapsack\+\_\+ilp (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{const std\+::vector$<$ unsigned $>$ \&}]{profits,  }\item[{const unsigned}]{num\+\_\+pallets,  }\item[{const unsigned}]{max\+\_\+weight }\end{DoxyParamCaption})}
+
+
+
+Integer linear programming algorithm to solve the knapsack problem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weights} & weights of the pallets \\
+\hline
+{\em profits} & profits of the pallets \\
+\hline
+{\em num\+\_\+pallets} & number of pallets \\
+\hline
+{\em max\+\_\+weight} & maximum weight of the truck \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+which pallets are part of the solution 
+\end{DoxyReturn}
+\Hypertarget{knapsack_8h_aad578277e90d3f7b19c23930eeff7f6a}\label{knapsack_8h_aad578277e90d3f7b19c23930eeff7f6a} 
+\index{knapsack.h@{knapsack.h}!to\_flat\_idx@{to\_flat\_idx}}
+\index{to\_flat\_idx@{to\_flat\_idx}!knapsack.h@{knapsack.h}}
+\doxysubsubsection{\texorpdfstring{to\_flat\_idx()}{to\_flat\_idx()}}
+{\footnotesize\ttfamily unsigned to\+\_\+flat\+\_\+idx (\begin{DoxyParamCaption}\item[{const unsigned}]{i,  }\item[{const unsigned}]{j,  }\item[{const unsigned}]{max\+\_\+weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Helper function for the recursive dynamic programming algorithm using a map that calculates the index for a recursion table position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & current item (table row) \\
+\hline
+{\em j} & current weight (table column) \\
+\hline
+{\em max\+\_\+weight} & maximum weight of the truck \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+map key for the recursion table position 
+\end{DoxyReturn}
