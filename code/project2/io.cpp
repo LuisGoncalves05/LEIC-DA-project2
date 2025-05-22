@@ -35,7 +35,7 @@ void read_pallets(const std::string& input_file, std::vector<unsigned> &weights,
 }
 
 void write_output(std::vector<bool>& used_pallets, std::vector<unsigned>& weights, std::vector<unsigned>& profits, std::string& output_path) {
-    std::ofstream outputFile(output_path + "Solution.csv");
+    std::ofstream outputFile(output_path);
     if (!outputFile.is_open()) throw std::runtime_error("Error: Could not create output file.");
 
     outputFile << "Pallet,\tWeight,\tProfit\n";
@@ -45,7 +45,7 @@ void write_output(std::vector<bool>& used_pallets, std::vector<unsigned>& weight
         if (used_pallets[i]) {
             total_weight += weights[i];
             total_profit += profits[i];
-            outputFile << i + 1 << ",\t" << weights[i] << ",\t" << profits[i] << '\n';
+            outputFile << i + 1 << ", " << weights[i] << ", " << profits[i] << '\n';
         }
     }
     outputFile << "\nTotal weight: " << total_weight << "\n";
@@ -54,16 +54,29 @@ void write_output(std::vector<bool>& used_pallets, std::vector<unsigned>& weight
     outputFile.close();
 }
 
-void print_output(std::vector<bool>& used_pallets, std::vector<unsigned>& weights, std::vector<unsigned>& profits) {
+void print_output(std::vector<bool>& used_pallets, std::vector<unsigned>& weights, std::vector<unsigned>& profits, std::chrono::nanoseconds time) {
     std::cout << "Used pallets:\n";
     unsigned int total_weight = 0, total_profit = 0;
     for (unsigned i = 0; i < used_pallets.size(); i++) {
         if (used_pallets[i]) {
             total_weight += weights[i];
             total_profit += profits[i];
-            std::cout << "1 ";
-        } else std::cout << "0 ";
+        }
     }
-    std::cout << "\nTotal weight: " << total_weight << "\n";
-    std::cout << "Total profit: " << total_profit << "\n";
+
+    if (total_weight > 0) {
+        for (unsigned i = 0; i < used_pallets.size(); i++) {
+            if (used_pallets[i]) {
+                std::cout << "1 ";
+            } else std::cout << "0 ";
+        }
+        std::cout << "\nTotal weight: " << total_weight << "\n";
+        std::cout << "Total profit: " << total_profit << "\n";
+        std::cout << "Solved in " << time.count() << " ns\n";
+    } else {
+        std::cout << "TIMED OUT";
+        std::cout << "\nTotal weight: TIMED OUT" << "\n";
+        std::cout << "Total profit: TIMED OUT" << "\n";
+        std::cout << "Solved in TIMED OUT ns\n";
+    }
 }

@@ -35,6 +35,7 @@ void problem_solver(const std::vector<std::string>& command) {
     std::string path = "data/example" + command[1] + "/";
     std::string pallets_path = path + "Pallets.csv";
     std::string truck_and_pallets_path = path + "TruckAndPallets.csv";
+    std::string output_path = path + "Solution.csv";
 
     unsigned max_weight;
     unsigned num_pallets;
@@ -50,10 +51,10 @@ void problem_solver(const std::vector<std::string>& command) {
     auto used_pallets = knapsack(weights, profits, num_pallets, max_weight, command[0]);
 
     auto stop = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+    auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
 
-    print_output(used_pallets, weights, profits);
-    std::cout << "Solved in " << duration.count() << " ms\n";
+    print_output(used_pallets, weights, profits, duration);
+    write_output(used_pallets, weights, profits, output_path);
 }
 
 void interface() {
@@ -86,11 +87,12 @@ void interface() {
         if (command[0] == "quit") {
             std::cout << "Terminating...\n";
             break;
-        } else if (command[0] == "help")
+        } else if (command[0] == "help") {
             show_help_info(command, info);
-        else if (info.count(command[0]))
+        } else if (info.count(command[0])) {
             problem_solver(command);
-        else
+        } else {
             std::cout << "Invalid command.\n";
+        }
     }
 }

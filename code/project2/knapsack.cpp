@@ -38,11 +38,10 @@ std::vector<bool> knapsack(const std::vector<unsigned>& weights, const std::vect
 
 
 std::vector<bool> knapsack_bf(const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned num_pallets, const unsigned max_weight) {
-    if (num_pallets > 32) {
-        throw std::runtime_error("That is a bit ambitious don't you think?");
-    }
-
     std::vector<bool> used_pallets(num_pallets, false);
+    if (num_pallets > 32) {
+        return used_pallets;
+    }
     
     unsigned combination = 0;
     unsigned best = 0;
