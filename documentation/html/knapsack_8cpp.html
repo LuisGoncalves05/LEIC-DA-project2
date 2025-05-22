@@ -125,31 +125,43 @@ Include dependency graph for knapsack.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa48c79dc04a894aef851df619b5aeb95" id="r_aa48c79dc04a894aef851df619b5aeb95"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#aa48c79dc04a894aef851df619b5aeb95">knapsack</a> (const std::vector&lt; unsigned &gt; &amp;weights, const std::vector&lt; unsigned &gt; &amp;profits, const unsigned num_pallets, const unsigned max_weight, const std::string &amp;algorithm)</td></tr>
+<tr class="memdesc:aa48c79dc04a894aef851df619b5aeb95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls a chosen algorithm to solve the knapsack problem and prints output.  <br /></td></tr>
 <tr class="separator:aa48c79dc04a894aef851df619b5aeb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee9d551ad5da539afd10dc5da9bce580" id="r_aee9d551ad5da539afd10dc5da9bce580"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#aee9d551ad5da539afd10dc5da9bce580">knapsack_bf</a> (const std::vector&lt; unsigned &gt; &amp;weights, const std::vector&lt; unsigned &gt; &amp;profits, const unsigned num_pallets, const unsigned max_weight)</td></tr>
+<tr class="memdesc:aee9d551ad5da539afd10dc5da9bce580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brute-force algorithm to solve the knapsack problem.  <br /></td></tr>
 <tr class="separator:aee9d551ad5da539afd10dc5da9bce580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdf64799a14ddc3acea26b02afc7eb64" id="r_afdf64799a14ddc3acea26b02afc7eb64"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#afdf64799a14ddc3acea26b02afc7eb64">knapsack_dp_iterative</a> (const std::vector&lt; unsigned &gt; &amp;weights, const std::vector&lt; unsigned &gt; &amp;profits, const unsigned num_pallets, const unsigned max_weight)</td></tr>
+<tr class="memdesc:afdf64799a14ddc3acea26b02afc7eb64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamic programming algorithm to solve the knapsack problem filling the recursion table iteratively.  <br /></td></tr>
 <tr class="separator:afdf64799a14ddc3acea26b02afc7eb64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a301e0e01e0c5e3e23cfc48f124de937f" id="r_a301e0e01e0c5e3e23cfc48f124de937f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#a301e0e01e0c5e3e23cfc48f124de937f">knapsack_dp_recursive_vector</a> (const std::vector&lt; unsigned &gt; &amp;weights, const std::vector&lt; unsigned &gt; &amp;profits, const unsigned num_pallets, const unsigned max_weight)</td></tr>
+<tr class="memdesc:a301e0e01e0c5e3e23cfc48f124de937f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamic programming algorithm to solve the knapsack problem filling the recursion table recursively.  <br /></td></tr>
 <tr class="separator:a301e0e01e0c5e3e23cfc48f124de937f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e3df41384abfeb42a495276dd47c579" id="r_a2e3df41384abfeb42a495276dd47c579"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#a2e3df41384abfeb42a495276dd47c579">dp_recursive_vector_helper</a> (const unsigned item, const unsigned weight, const std::vector&lt; unsigned &gt; &amp;weights, const std::vector&lt; unsigned &gt; &amp;profits, std::vector&lt; std::vector&lt; unsigned &gt; &gt; &amp;last_item_vector, std::vector&lt; std::vector&lt; unsigned &gt; &gt; &amp;max_value_vector)</td></tr>
+<tr class="memdesc:a2e3df41384abfeb42a495276dd47c579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for the recursive dynamic programming algorithm.  <br /></td></tr>
 <tr class="separator:a2e3df41384abfeb42a495276dd47c579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4637bd3ec6027bc5c78ef2ebcd2598d" id="r_ad4637bd3ec6027bc5c78ef2ebcd2598d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#ad4637bd3ec6027bc5c78ef2ebcd2598d">knapsack_dp_recursive_map</a> (const std::vector&lt; unsigned &gt; &amp;weights, const std::vector&lt; unsigned &gt; &amp;profits, const unsigned num_pallets, const unsigned max_weight)</td></tr>
+<tr class="memdesc:ad4637bd3ec6027bc5c78ef2ebcd2598d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamic programming algorithm to solve the knapsack problem using a map to store the recursion table.  <br /></td></tr>
 <tr class="separator:ad4637bd3ec6027bc5c78ef2ebcd2598d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a71a0c519401ec4c82e66f67d2db225" id="r_a4a71a0c519401ec4c82e66f67d2db225"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#a4a71a0c519401ec4c82e66f67d2db225">to_flat_idx</a> (const unsigned combination, const unsigned j, const unsigned max_weight)</td></tr>
-<tr class="separator:a4a71a0c519401ec4c82e66f67d2db225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad578277e90d3f7b19c23930eeff7f6a" id="r_aad578277e90d3f7b19c23930eeff7f6a"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#aad578277e90d3f7b19c23930eeff7f6a">to_flat_idx</a> (const unsigned i, const unsigned j, const unsigned max_weight)</td></tr>
+<tr class="memdesc:aad578277e90d3f7b19c23930eeff7f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for the recursive dynamic programming algorithm using a map that calculates the index for a recursion table position.  <br /></td></tr>
+<tr class="separator:aad578277e90d3f7b19c23930eeff7f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa85454b746f17a9f6035bb8fd12231df" id="r_aa85454b746f17a9f6035bb8fd12231df"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#aa85454b746f17a9f6035bb8fd12231df">dp_recursive_map_helper</a> (const unsigned item, const unsigned weight, const std::vector&lt; unsigned &gt; &amp;weights, const std::vector&lt; unsigned &gt; &amp;profits, const unsigned max_weight, std::unordered_map&lt; unsigned, unsigned &gt; &amp;last_item_map, std::unordered_map&lt; unsigned, unsigned &gt; &amp;max_value_map)</td></tr>
+<tr class="memdesc:aa85454b746f17a9f6035bb8fd12231df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for the recursive dynamic programming algorithm using a map.  <br /></td></tr>
 <tr class="separator:aa85454b746f17a9f6035bb8fd12231df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a151baf5987f2f3d75fd80362074aa1a5" id="r_a151baf5987f2f3d75fd80362074aa1a5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#a151baf5987f2f3d75fd80362074aa1a5">knapsack_greedy</a> (const std::vector&lt; unsigned &gt; &amp;weights, const std::vector&lt; unsigned &gt; &amp;profits, const unsigned num_pallets, const unsigned max_weight)</td></tr>
+<tr class="memdesc:a151baf5987f2f3d75fd80362074aa1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Greedy algorithm to solve the knapsack problem.  <br /></td></tr>
 <tr class="separator:a151baf5987f2f3d75fd80362074aa1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac60bcd8125b3654d30ad6e46b71dfe46" id="r_ac60bcd8125b3654d30ad6e46b71dfe46"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#ac60bcd8125b3654d30ad6e46b71dfe46">knapsack_ilp</a> (const std::vector&lt; unsigned &gt; &amp;weights, const std::vector&lt; unsigned &gt; &amp;profits, const unsigned num_pallets, const unsigned max_weight)</td></tr>
+<tr class="memdesc:ac60bcd8125b3654d30ad6e46b71dfe46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer linear programming algorithm to solve the knapsack problem.  <br /></td></tr>
 <tr class="separator:ac60bcd8125b3654d30ad6e46b71dfe46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:abe06bfeddd01e01865c0910b88b3ca04" id="r_abe06bfeddd01e01865c0910b88b3ca04"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#abe06bfeddd01e01865c0910b88b3ca04">INVALID_RESULT</a> = UINT_MAX</td></tr>
+<tr class="memdesc:abe06bfeddd01e01865c0910b88b3ca04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value that indicates an invalid result.  <br /></td></tr>
 <tr class="separator:abe06bfeddd01e01865c0910b88b3ca04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fd187e11bdf71ada0081da4cced7c21" id="r_a7fd187e11bdf71ada0081da4cced7c21"><td class="memItemLeft" align="right" valign="top">const std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="knapsack_8cpp.html#a7fd187e11bdf71ada0081da4cced7c21">valid_algorithms</a></td></tr>
+<tr class="memdesc:a7fd187e11bdf71ada0081da4cced7c21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of valid algorithms.  <br /></td></tr>
 <tr class="separator:a7fd187e11bdf71ada0081da4cced7c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -209,6 +221,21 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Helper function for the recursive dynamic programming algorithm using a map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>current item (table row) </td></tr>
+    <tr><td class="paramname">weight</td><td>current weight (table column) </td></tr>
+    <tr><td class="paramname">weights</td><td>weights of the pallets </td></tr>
+    <tr><td class="paramname">profits</td><td>profits of the pallets </td></tr>
+    <tr><td class="paramname">max_weight</td><td>maximum weight of the truck </td></tr>
+    <tr><td class="paramname">last_item_map</td><td>recursion table for the last item used in a map </td></tr>
+    <tr><td class="paramname">max_value_map</td><td>recursion table for the maximum value in a map </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>maximum value for the current item and weight </dd></dl>
+
 </div>
 </div>
 <a id="a2e3df41384abfeb42a495276dd47c579" name="a2e3df41384abfeb42a495276dd47c579"></a>
@@ -261,6 +288,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Helper function for the recursive dynamic programming algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>current item (table row) </td></tr>
+    <tr><td class="paramname">weight</td><td>current weight (table column) </td></tr>
+    <tr><td class="paramname">weights</td><td>weights of the pallets </td></tr>
+    <tr><td class="paramname">profits</td><td>profits of the pallets </td></tr>
+    <tr><td class="paramname">last_item_vector</td><td>recursion table for the last item used </td></tr>
+    <tr><td class="paramname">max_value_vector</td><td>recursion table for the maximum value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>maximum value for the current item and weight </dd></dl>
+
 </div>
 </div>
 <a id="aa48c79dc04a894aef851df619b5aeb95" name="aa48c79dc04a894aef851df619b5aeb95"></a>
@@ -307,6 +348,19 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Calls a chosen algorithm to solve the knapsack problem and prints output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weights</td><td>weights of the pallets </td></tr>
+    <tr><td class="paramname">profits</td><td>profits of the pallets </td></tr>
+    <tr><td class="paramname">num_pallets</td><td>number of pallets </td></tr>
+    <tr><td class="paramname">max_weight</td><td>maximum weight of the truck </td></tr>
+    <tr><td class="paramname">algorithm</td><td>algorithm chosen to solve the problem </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>which pallets are part of the solution </dd></dl>
+
 </div>
 </div>
 <a id="aee9d551ad5da539afd10dc5da9bce580" name="aee9d551ad5da539afd10dc5da9bce580"></a>
@@ -346,6 +400,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Brute-force algorithm to solve the knapsack problem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weights</td><td>weights of the pallets </td></tr>
+    <tr><td class="paramname">profits</td><td>profits of the pallets </td></tr>
+    <tr><td class="paramname">num_pallets</td><td>number of pallets </td></tr>
+    <tr><td class="paramname">max_weight</td><td>maximum weight of the truck </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>which pallets are part of the solution </dd></dl>
 
 </div>
 </div>
@@ -387,6 +453,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Dynamic programming algorithm to solve the knapsack problem filling the recursion table iteratively. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weights</td><td>weights of the pallets </td></tr>
+    <tr><td class="paramname">profits</td><td>profits of the pallets </td></tr>
+    <tr><td class="paramname">num_pallets</td><td>number of pallets </td></tr>
+    <tr><td class="paramname">max_weight</td><td>maximum weight of the truck </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>which pallets are part of the solution </dd></dl>
+
 </div>
 </div>
 <a id="ad4637bd3ec6027bc5c78ef2ebcd2598d" name="ad4637bd3ec6027bc5c78ef2ebcd2598d"></a>
@@ -426,6 +504,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Dynamic programming algorithm to solve the knapsack problem using a map to store the recursion table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weights</td><td>weights of the pallets </td></tr>
+    <tr><td class="paramname">profits</td><td>profits of the pallets </td></tr>
+    <tr><td class="paramname">num_pallets</td><td>number of pallets </td></tr>
+    <tr><td class="paramname">max_weight</td><td>maximum weight of the truck </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>which pallets are part of the solution </dd></dl>
 
 </div>
 </div>
@@ -467,6 +557,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Dynamic programming algorithm to solve the knapsack problem filling the recursion table recursively. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weights</td><td>weights of the pallets </td></tr>
+    <tr><td class="paramname">profits</td><td>profits of the pallets </td></tr>
+    <tr><td class="paramname">num_pallets</td><td>number of pallets </td></tr>
+    <tr><td class="paramname">max_weight</td><td>maximum weight of the truck </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>which pallets are part of the solution </dd></dl>
+
 </div>
 </div>
 <a id="a151baf5987f2f3d75fd80362074aa1a5" name="a151baf5987f2f3d75fd80362074aa1a5"></a>
@@ -506,6 +608,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Greedy algorithm to solve the knapsack problem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weights</td><td>weights of the pallets </td></tr>
+    <tr><td class="paramname">profits</td><td>profits of the pallets </td></tr>
+    <tr><td class="paramname">num_pallets</td><td>number of pallets </td></tr>
+    <tr><td class="paramname">max_weight</td><td>maximum weight of the truck </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>which pallets are part of the solution </dd></dl>
 
 </div>
 </div>
@@ -547,10 +661,22 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Integer linear programming algorithm to solve the knapsack problem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">weights</td><td>weights of the pallets </td></tr>
+    <tr><td class="paramname">profits</td><td>profits of the pallets </td></tr>
+    <tr><td class="paramname">num_pallets</td><td>number of pallets </td></tr>
+    <tr><td class="paramname">max_weight</td><td>maximum weight of the truck </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>which pallets are part of the solution </dd></dl>
+
 </div>
 </div>
-<a id="a4a71a0c519401ec4c82e66f67d2db225" name="a4a71a0c519401ec4c82e66f67d2db225"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a71a0c519401ec4c82e66f67d2db225">&#9670;&#160;</a></span>to_flat_idx()</h2>
+<a id="aad578277e90d3f7b19c23930eeff7f6a" name="aad578277e90d3f7b19c23930eeff7f6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad578277e90d3f7b19c23930eeff7f6a">&#9670;&#160;</a></span>to_flat_idx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -562,7 +688,7 @@ Variables</h2></td></tr>
           <td class="memname">unsigned to_flat_idx </td>
           <td>(</td>
           <td class="paramtype">const unsigned&#160;</td>
-          <td class="paramname"><em>combination</em>, </td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -589,6 +715,17 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Helper function for the recursive dynamic programming algorithm using a map that calculates the index for a recursion table position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>current item (table row) </td></tr>
+    <tr><td class="paramname">j</td><td>current weight (table column) </td></tr>
+    <tr><td class="paramname">max_weight</td><td>maximum weight of the truck </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>map key for the recursion table position </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -612,6 +749,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Value that indicates an invalid result. </p>
+
 </div>
 </div>
 <a id="a7fd187e11bdf71ada0081da4cced7c21" name="a7fd187e11bdf71ada0081da4cced7c21"></a>
@@ -629,6 +768,8 @@ Variables</h2></td></tr>
 <div class="line">    <span class="stringliteral">&quot;brute-force&quot;</span>, <span class="stringliteral">&quot;dp-iterative&quot;</span>, <span class="stringliteral">&quot;dp-recursive-vector&quot;</span>, <span class="stringliteral">&quot;dp-recursive-map&quot;</span>, <span class="stringliteral">&quot;greedy&quot;</span>, <span class="stringliteral">&quot;integer-linear&quot;</span></div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p>Set of valid algorithms. </p>
+
 </div>
 </div>
 </div><!-- contents -->

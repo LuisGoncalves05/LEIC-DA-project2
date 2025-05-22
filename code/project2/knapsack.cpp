@@ -8,8 +8,14 @@
 #include <bitset>
 #include <iostream>
 
+/**
+ * @brief Value that indicates an invalid result
+ */
 constexpr unsigned INVALID_RESULT = UINT_MAX;
 
+/**
+ * @brief Set of valid algorithms
+ */
 const std::set<std::string> valid_algorithms = {
     "brute-force", "dp-iterative", "dp-recursive-vector", "dp-recursive-map", "greedy", "integer-linear"
 };
@@ -190,8 +196,8 @@ std::vector<bool> knapsack_dp_recursive_map(const std::vector<unsigned>& weights
     return used_pallets;
 }
 
-inline unsigned to_flat_idx(const unsigned combination, const unsigned j, const unsigned max_weight) {
-    return combination * (max_weight + 1) + j;
+inline unsigned to_flat_idx(const unsigned i, const unsigned j, const unsigned max_weight) {
+    return i * (max_weight + 1) + j;
 }
 
 unsigned dp_recursive_map_helper(const unsigned item, const unsigned weight, const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, const unsigned max_weight, std::unordered_map<unsigned, unsigned>& last_item_map, std::unordered_map<unsigned, unsigned>& max_value_map) {

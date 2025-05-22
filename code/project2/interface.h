@@ -13,7 +13,7 @@
 void show_help_info(const std::vector<std::string>& command, const std::map<std::string, std::string>& info);
 
 /**
- * @brief Calls a chosen algorithm to solve the knapsack problem and prints output
+ * @brief Handles a knapsack problem
  * @param command command-line-interface input
  */
  void problem_solver(const std::vector<std::string>& command);
