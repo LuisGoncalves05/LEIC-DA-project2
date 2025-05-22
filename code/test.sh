@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the valid algorithms
-algorithms=("brute-force" "dp_iterative" "dp_recursive_vector" "dp_recursive_map" "greedy" "integer-linear")
+algorithms=("brute-force" "dp-iterative" "dp-recursive-vector" "dp-recursive-map" "greedy" "integer-linear")
 
 # Create output directory
 mkdir -p results

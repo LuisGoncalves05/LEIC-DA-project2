@@ -58,7 +58,6 @@ std::vector<bool> knapsack_dp_recursive_vector(const std::vector<unsigned>& weig
  * @param max_value_vector recursion table for the maximum value
  * @return maximum value for the current item and weight
  */
-*/
 unsigned dp_recursive_vector_helper(const unsigned item, const unsigned weight, const std::vector<unsigned>& weights, const std::vector<unsigned>& profits, std::vector<std::vector<unsigned>>& last_item_vector, std::vector<std::vector<unsigned>>& max_value_vector);
 
 /**

@@ -236,17 +236,17 @@ std::vector<bool> knapsack_greedy(const std::vector<unsigned>& weights, const st
     std::vector<bool> used_pallets(num_pallets, false);
 
     unsigned current_weight = max_weight;
-    std::vector<std::pair<float,unsigned>> value_per_weight;
+    std::vector<std::pair<float,unsigned>> weight_per_value;
 
     for (unsigned i = 0; i < num_pallets; i++)
-        value_per_weight.push_back({profits[i] / (float) weights[i], i});
+        weight_per_value.push_back({(float) weights[i] / (float) profits[i], i});
 
-    std::sort(value_per_weight.rbegin(),value_per_weight.rend());
+    std::sort(weight_per_value.begin(), weight_per_value.end());
 
     for (unsigned i = 0; i < num_pallets; i++) {
-        if (current_weight >= weights[value_per_weight[i].second]) {
-            used_pallets[value_per_weight[i].second] = true;
-            current_weight -= weights[value_per_weight[i].second];
+        if (current_weight >= weights[weight_per_value[i].second]) {
+            used_pallets[weight_per_value[i].second] = true;
+            current_weight -= weights[weight_per_value[i].second];
         } else
             break;
     }

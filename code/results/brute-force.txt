@@ -1,21 +1,21 @@
 Dataset 1
 Used pallets:
-0 1 1 0 1 1 1 1 1 
-Total weight: 98
-Total profit: 34
-Solved in 77620 ns
+0 0 1 0 1 0 1 0 1 
+Total weight: 97
+Total profit: 29
+Solved in 56090 ns
 Dataset 2
 Used pallets:
-0 1 0 0 0 1 0 0 0 0 0 0 0 0 
-Total weight: 97
-Total profit: 23
-Solved in 2331882 ns
+0 0 0 1 0 0 0 0 0 0 1 1 1 1 
+Total weight: 98
+Total profit: 32
+Solved in 2333078 ns
 Dataset 3
 Used pallets:
-0 0 0 0 1 1 1 1 1 0 
-Total weight: 100
-Total profit: 50
-Solved in 147876 ns
+0 0 0 0 1 1 0 1 1 0 
+Total weight: 97
+Total profit: 40
+Solved in 141967 ns
 Dataset 4
 Used pallets:
 TIMED OUT
@@ -36,25 +36,25 @@ Total profit: TIMED OUT
 Solved in TIMED OUT ns
 Dataset 7
 Used pallets:
-1 1 1 1 1 1 1 1 0 0 0 0 0 0 
+1 1 0 1 0 1 0 1 0 1 0 1 0 1 
 Total weight: 610
-Total profit: 986
-Solved in 3743145 ns
+Total profit: 987
+Solved in 4898298 ns
 Dataset 8
 Used pallets:
-0 1 1 1 1 1 1 0 0 0 0 0 0 0 
+1 1 1 1 1 1 1 1 1 1 1 1 0 0 
 Total weight: 376
 Total profit: 608
-Solved in 3132948 ns
+Solved in 4397150 ns
 Dataset 9
 Used pallets:
 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 Total weight: 15
 Total profit: 945
-Solved in 12425675 ns
+Solved in 12622859 ns
 Dataset 10
 Used pallets:
-1 1 
-Total weight: 2
-Total profit: 2
-Solved in 1873 ns
+0 1 
+Total weight: 16
+Total profit: 15
+Solved in 1793 ns

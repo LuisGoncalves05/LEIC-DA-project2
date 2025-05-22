@@ -7,7 +7,6 @@ results_folder = 'results'
 time_pattern = re.compile(r"Solved in (\d+) ns")
 algorithm_times = {}
 
-# Load times from files
 for filename in os.listdir(results_folder):
     if filename.endswith(".txt"):
         algo_name = filename.replace(".txt", "")
@@ -23,13 +22,10 @@ for filename in os.listdir(results_folder):
                     times.append(None)
         algorithm_times[algo_name] = times
 
-algorithms = sorted(algorithm_times.keys())
-for i, j in algorithm_times.items():
-    print(i, j)
+algorithms = ["brute-force", "dp-iterative", "dp-recursive-vector", "dp-recursive-map", "greedy", "integer-linear"]
 
 num_datasets = 10
 
-# Create 2 rows x 5 columns subplots
 fig, axs = plt.subplots(2, 5, figsize=(20, 8), constrained_layout=True)
 
 for dataset_index in range(num_datasets):
@@ -46,7 +42,6 @@ for dataset_index in range(num_datasets):
 
     plot_heights = [t if not np.isnan(t) else timeout_bar_height for t in times_for_dataset]
 
-    # Optional: color timeout bars differently
     bar_colors = ['skyblue' if not np.isnan(t) else 'lightcoral' for t in times_for_dataset]
     
     bars = ax.bar(algorithms, plot_heights, color=bar_colors)
@@ -54,7 +49,6 @@ for dataset_index in range(num_datasets):
     ax.set_ylim(0, max([t for t in times_for_dataset if not np.isnan(t)] + [1]) * 1.2)
     ax.tick_params(axis='x', rotation=45)
     
-    # Annotate bars with times or "Timeout"
     for bar, t in zip(bars, times_for_dataset):
         if not np.isnan(t):
             label = str(int(t))
