@@ -11,7 +11,7 @@
 constexpr unsigned INVALID_RESULT = UINT_MAX;
 
 const std::set<std::string> valid_algorithms = {
-    "brute-force", "dp_iterative", "dp_recursive_vector", "dp_recursive_map", "greedy", "integer-linear"
+    "brute-force", "dp-iterative", "dp-recursive-vector", "dp-recursive-map", "greedy", "integer-linear"
 };
 
 
@@ -21,11 +21,11 @@ std::vector<bool> knapsack(const std::vector<unsigned>& weights, const std::vect
 
     if (algorithm == "brute-force") {
         return knapsack_bf(weights, profits, num_pallets, max_weight);
-    } else if (algorithm == "dp_iterative") {
+    } else if (algorithm == "dp-iterative") {
         return knapsack_dp_iterative(weights, profits, num_pallets, max_weight);
-    } else if (algorithm == "dp_recursive_vector") {
+    } else if (algorithm == "dp-recursive-vector") {
         return knapsack_dp_recursive_vector(weights, profits, num_pallets, max_weight);
-    } else if (algorithm == "dp_recursive_map") {
+    } else if (algorithm == "dp-recursive-map") {
         return knapsack_dp_recursive_map(weights, profits, num_pallets, max_weight);
     } else if (algorithm == "greedy") {
         return knapsack_greedy(weights, profits, num_pallets, max_weight);

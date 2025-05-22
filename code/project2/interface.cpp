@@ -59,9 +59,9 @@ void problem_solver(const std::vector<std::string>& command) {
 void interface() {
     std::map<std::string, std::string> info = {
         {"brute-force", "Solves the problem using brute force."},
-        {"dp_iterative", "Solves the problem using iterative dynamic programming."},
-        {"dp_recursive_vector", "Solves the problem using top-down dynamic programming with vector memoization."},
-        {"dp_recursive_map", "Solves the problem using top-down dynamic programming with map memoization."},
+        {"dp-iterative", "Solves the problem using iterative dynamic programming."},
+        {"dp-recursive-vector", "Solves the problem using top-down dynamic programming with vector memoization."},
+        {"dp-recursive-map", "Solves the problem using top-down dynamic programming with map memoization."},
         {"greedy", "Solves the problem using a greedy approach."},
         {"integer-linear", "Solves the problem using integer linear programming."},
         {"quit", "Terminates the program."}
@@ -77,20 +77,15 @@ void interface() {
         std::string s;
         std::vector<std::string> command;
 
-        while (ss >> s)
-            command.push_back(s);
+        while (ss >> s) command.push_back(s);
 
-        if (command.empty())
-            continue;
+        if (command.empty()) continue;
 
         if (command[0] == "quit") {
             std::cout << "Terminating...\n";
             break;
-        } else if (command[0] == "help")
-            show_help_info(command, info);
-        else if (info.count(command[0]))
-            problem_solver(command);
-        else
-            std::cout << "Invalid command.\n";
+        } else if (command[0] == "help") show_help_info(command, info);
+        else if (info.count(command[0])) problem_solver(command);
+        else std::cout << "Invalid command.\n";
     }
 }
