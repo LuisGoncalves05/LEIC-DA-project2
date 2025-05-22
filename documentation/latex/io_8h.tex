@@ -1,0 +1,61 @@
+\doxysection{code/project2/io.h File Reference}
+\hypertarget{io_8h}{}\label{io_8h}\index{code/project2/io.h@{code/project2/io.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for io.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{io_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{io_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{io_8h_aff52e02cd68a89660192340c1da104e9}{read\+\_\+truck}} (const std\+::string \&input\+\_\+file, unsigned \&max\+\_\+weights, unsigned \&num\+\_\+pallets)
+\item 
+void \mbox{\hyperlink{io_8h_a9b81a7d9aff93d711bb1a021802dacd9}{read\+\_\+pallets}} (const std\+::string \&input\+\_\+file, std\+::vector$<$ unsigned $>$ \&weights, std\+::vector$<$ unsigned $>$ \&profits)
+\item 
+void \mbox{\hyperlink{io_8h_a3f5d8f4f4b3264bfae0ce94834762c56}{write\+\_\+output}} (std\+::vector$<$ bool $>$ \&used\+\_\+pallets, std\+::vector$<$ unsigned $>$ \&weights, std\+::vector$<$ unsigned $>$ \&profits, std\+::string \&output\+\_\+path)
+\item 
+void \mbox{\hyperlink{io_8h_a7ad7cb6649d8a754590a9890663d3b0f}{print\+\_\+output}} (std\+::vector$<$ bool $>$ \&used\+\_\+pallets, std\+::vector$<$ unsigned $>$ \&weights, std\+::vector$<$ unsigned $>$ \&profits)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{io_8h_a7ad7cb6649d8a754590a9890663d3b0f}\label{io_8h_a7ad7cb6649d8a754590a9890663d3b0f} 
+\index{io.h@{io.h}!print\_output@{print\_output}}
+\index{print\_output@{print\_output}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{print\_output()}{print\_output()}}
+{\footnotesize\ttfamily void print\+\_\+output (\begin{DoxyParamCaption}\item[{std\+::vector$<$ bool $>$ \&}]{used\+\_\+pallets,  }\item[{std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{std\+::vector$<$ unsigned $>$ \&}]{profits }\end{DoxyParamCaption})}
+
+\Hypertarget{io_8h_a9b81a7d9aff93d711bb1a021802dacd9}\label{io_8h_a9b81a7d9aff93d711bb1a021802dacd9} 
+\index{io.h@{io.h}!read\_pallets@{read\_pallets}}
+\index{read\_pallets@{read\_pallets}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{read\_pallets()}{read\_pallets()}}
+{\footnotesize\ttfamily void read\+\_\+pallets (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input\+\_\+file,  }\item[{std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{std\+::vector$<$ unsigned $>$ \&}]{profits }\end{DoxyParamCaption})}
+
+\Hypertarget{io_8h_aff52e02cd68a89660192340c1da104e9}\label{io_8h_aff52e02cd68a89660192340c1da104e9} 
+\index{io.h@{io.h}!read\_truck@{read\_truck}}
+\index{read\_truck@{read\_truck}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{read\_truck()}{read\_truck()}}
+{\footnotesize\ttfamily void read\+\_\+truck (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input\+\_\+file,  }\item[{unsigned \&}]{max\+\_\+weights,  }\item[{unsigned \&}]{num\+\_\+pallets }\end{DoxyParamCaption})}
+
+\Hypertarget{io_8h_a3f5d8f4f4b3264bfae0ce94834762c56}\label{io_8h_a3f5d8f4f4b3264bfae0ce94834762c56} 
+\index{io.h@{io.h}!write\_output@{write\_output}}
+\index{write\_output@{write\_output}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{write\_output()}{write\_output()}}
+{\footnotesize\ttfamily void write\+\_\+output (\begin{DoxyParamCaption}\item[{std\+::vector$<$ bool $>$ \&}]{used\+\_\+pallets,  }\item[{std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{std\+::vector$<$ unsigned $>$ \&}]{profits,  }\item[{std\+::string \&}]{output\+\_\+path }\end{DoxyParamCaption})}
+

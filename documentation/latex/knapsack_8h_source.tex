@@ -1,0 +1,35 @@
+\doxysection{knapsack.\+h}
+\hypertarget{knapsack_8h_source}{}\label{knapsack_8h_source}\index{code/project2/knapsack.h@{code/project2/knapsack.h}}
+\mbox{\hyperlink{knapsack_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ KNAPSACK\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ KNAPSACK\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ std::vector<bool>\ \mbox{\hyperlink{knapsack_8h_aa48c79dc04a894aef851df619b5aeb95}{knapsack}}(\textcolor{keyword}{const}\ std::vector<unsigned>\&\ weights,\ \textcolor{keyword}{const}\ std::vector<unsigned>\&\ profits,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ num\_pallets,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ max\_weight,\ \textcolor{keyword}{const}\ std::string\&\ algorithm);}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ std::vector<bool>\ \mbox{\hyperlink{knapsack_8h_aee9d551ad5da539afd10dc5da9bce580}{knapsack\_bf}}(\textcolor{keyword}{const}\ std::vector<unsigned>\&\ weights,\ \textcolor{keyword}{const}\ std::vector<unsigned>\&\ profits,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ num\_pallets,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ max\_weight);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ std::vector<bool>\ \mbox{\hyperlink{knapsack_8h_afdf64799a14ddc3acea26b02afc7eb64}{knapsack\_dp\_iterative}}(\textcolor{keyword}{const}\ std::vector<unsigned>\&\ weights,\ \textcolor{keyword}{const}\ std::vector<unsigned>\&\ profits,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ num\_pallets,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ max\_weight);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ std::vector<bool>\ \mbox{\hyperlink{knapsack_8h_a301e0e01e0c5e3e23cfc48f124de937f}{knapsack\_dp\_recursive\_vector}}(\textcolor{keyword}{const}\ std::vector<unsigned>\&\ weights,\ \textcolor{keyword}{const}\ std::vector<unsigned>\&\ profits,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ num\_pallets,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ max\_weight);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{knapsack_8h_a2e3df41384abfeb42a495276dd47c579}{dp\_recursive\_vector\_helper}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ item,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ weight,\ \textcolor{keyword}{const}\ std::vector<unsigned>\&\ weights,\ \textcolor{keyword}{const}\ std::vector<unsigned>\&\ profits,\ std::vector<std::vector<unsigned>>\&\ last\_item\_vector,\ std::vector<std::vector<unsigned>>\&\ max\_value\_vector);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ std::vector<bool>\ \mbox{\hyperlink{knapsack_8h_ad4637bd3ec6027bc5c78ef2ebcd2598d}{knapsack\_dp\_recursive\_map}}(\textcolor{keyword}{const}\ std::vector<unsigned>\&\ weights,\ \textcolor{keyword}{const}\ std::vector<unsigned>\&\ profits,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ num\_pallets,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ max\_weight);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{knapsack_8h_aad578277e90d3f7b19c23930eeff7f6a}{to\_flat\_idx}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ i,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ j,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ max\_weight);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{knapsack_8h_aa85454b746f17a9f6035bb8fd12231df}{dp\_recursive\_map\_helper}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ item,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ weight,\ \textcolor{keyword}{const}\ std::vector<unsigned>\&\ weights,\ \textcolor{keyword}{const}\ std::vector<unsigned>\&\ profits,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ max\_weight,\ std::unordered\_map<unsigned,\ unsigned>\&\ last\_item\_map,\ std::unordered\_map<unsigned,\ unsigned>\&\ max\_value\_map);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ std::vector<bool>\ \mbox{\hyperlink{knapsack_8h_a151baf5987f2f3d75fd80362074aa1a5}{knapsack\_greedy}}(\textcolor{keyword}{const}\ std::vector<unsigned>\&\ weights,\ \textcolor{keyword}{const}\ std::vector<unsigned>\&\ profits,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ num\_pallets,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ max\_weight);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ std::vector<bool>\ \mbox{\hyperlink{knapsack_8h_ac60bcd8125b3654d30ad6e46b71dfe46}{knapsack\_ilp}}(\textcolor{keyword}{const}\ std::vector<unsigned>\&\ weights,\ \textcolor{keyword}{const}\ std::vector<unsigned>\&\ profits,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ num\_pallets,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ max\_weight);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
