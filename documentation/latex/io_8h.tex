@@ -5,6 +5,7 @@
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
 Include dependency graph for io.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -28,16 +29,16 @@ void \mbox{\hyperlink{io_8h_a9b81a7d9aff93d711bb1a021802dacd9}{read\+\_\+pallets
 \begin{DoxyCompactList}\small\item\em Reads and parses the pallets weight and profit information from a CSV file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{io_8h_a3f5d8f4f4b3264bfae0ce94834762c56}{write\+\_\+output}} (std\+::vector$<$ bool $>$ \&used\+\_\+pallets, std\+::vector$<$ unsigned $>$ \&weights, std\+::vector$<$ unsigned $>$ \&profits, std\+::string \&output\+\_\+path)
 \begin{DoxyCompactList}\small\item\em Parses and writes to a CSV file the output of the knapsack problem. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{io_8h_a7ad7cb6649d8a754590a9890663d3b0f}{print\+\_\+output}} (std\+::vector$<$ bool $>$ \&used\+\_\+pallets, std\+::vector$<$ unsigned $>$ \&weights, std\+::vector$<$ unsigned $>$ \&profits)
+void \mbox{\hyperlink{io_8h_af1bd288f5dfe964188e3c8247ae9a52a}{print\+\_\+output}} (std\+::vector$<$ bool $>$ \&used\+\_\+pallets, std\+::vector$<$ unsigned $>$ \&weights, std\+::vector$<$ unsigned $>$ \&profits, std\+::chrono\+::nanoseconds time)
 \begin{DoxyCompactList}\small\item\em Parses and prints the output of the knapsack problem. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{io_8h_a7ad7cb6649d8a754590a9890663d3b0f}\label{io_8h_a7ad7cb6649d8a754590a9890663d3b0f} 
+\Hypertarget{io_8h_af1bd288f5dfe964188e3c8247ae9a52a}\label{io_8h_af1bd288f5dfe964188e3c8247ae9a52a} 
 \index{io.h@{io.h}!print\_output@{print\_output}}
 \index{print\_output@{print\_output}!io.h@{io.h}}
 \doxysubsubsection{\texorpdfstring{print\_output()}{print\_output()}}
-{\footnotesize\ttfamily void print\+\_\+output (\begin{DoxyParamCaption}\item[{std\+::vector$<$ bool $>$ \&}]{used\+\_\+pallets,  }\item[{std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{std\+::vector$<$ unsigned $>$ \&}]{profits }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void print\+\_\+output (\begin{DoxyParamCaption}\item[{std\+::vector$<$ bool $>$ \&}]{used\+\_\+pallets,  }\item[{std\+::vector$<$ unsigned $>$ \&}]{weights,  }\item[{std\+::vector$<$ unsigned $>$ \&}]{profits,  }\item[{std\+::chrono\+::nanoseconds}]{time }\end{DoxyParamCaption})}
 
 
 
@@ -50,6 +51,8 @@ Parses and prints the output of the knapsack problem.
 {\em weights} & weights of the pallets \\
 \hline
 {\em profits} & profits of the pallets \\
+\hline
+{\em time} & time taken by the algorithm computations \\
 \hline
 \end{DoxyParams}
 \Hypertarget{io_8h_a9b81a7d9aff93d711bb1a021802dacd9}\label{io_8h_a9b81a7d9aff93d711bb1a021802dacd9} 
